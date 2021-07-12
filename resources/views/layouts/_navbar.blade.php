@@ -14,6 +14,12 @@
                     <a href="/" class="nav-link {{ Request::is('/') ? 'active' : '' }}">Home</a>
                 </li>
 
+                <li class="nav-item">
+                    <a href="{{ route('orders.create') }}"
+                        class="nav-link {{ request()->routeIs('orders.create') ? 'active' : '' }}"
+                    >Generate Order</a>
+                </li>
+
             </ul>
         </div>
     </div>

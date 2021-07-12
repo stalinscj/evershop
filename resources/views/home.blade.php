@@ -5,7 +5,7 @@
         <p class="display-1">Evershop:</p>
         <p class="display-1">The best place to</p>
         <div class="display-1">
-            <a href="#">Buy</a>
+            <a href="{{ route('orders.create') }}">Buy</a>
         </div>
     </div>
 @endsection
