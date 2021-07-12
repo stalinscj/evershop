@@ -2,7 +2,10 @@
 
 namespace App\Providers;
 
+use Dnetix\Redirection\PlacetoPay;
+use App\Services\WebCheckoutService;
 use Illuminate\Support\ServiceProvider;
+use App\Services\Contracts\PaymentService;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -13,7 +16,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->bind(PaymentService::class, function ($app) {
+
+            $placetoPay = new PlacetoPay(config('services.web_checkout'));
+
+            return new WebCheckoutService($placetoPay);
+        });
     }
 
     /**
