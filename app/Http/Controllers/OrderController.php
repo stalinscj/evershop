@@ -25,6 +25,18 @@ class OrderController extends Controller
     }
 
     /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Contracts\View\View
+     */
+    public function index()
+    {
+        $orders = Order::latest()->paginate();
+
+        return view('orders.index', compact('orders'));
+    }
+
+    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Contracts\View\View

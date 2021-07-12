@@ -20,6 +20,12 @@
                     >Generate Order</a>
                 </li>
 
+                <li class="nav-item">
+                    <a href="{{ route('orders.index') }}"
+                        class="nav-link {{ request()->routeIs('orders.index') ? 'active' : '' }}"
+                    >Orders List</a>
+                </li>
+
             </ul>
         </div>
     </div>
