@@ -12,6 +12,9 @@ class HomeAccessTest extends TestCase
     public function can_visit_the_home_page()
     {
         $this->get(route('home'))
-            ->assertViewIs('home');
+            ->assertViewIs('home')
+            ->assertSeeText('Evershop:')
+            ->assertSeeText('The best place to')
+            ->assertSeeText('Buy');
     }
 }

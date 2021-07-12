@@ -1,12 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Everhop</title>
-</head>
-<body>
-    <h1>Evershop: The best place to buy</h1>
-</body>
-</html>
+@extends('layouts.app')
+
+@section('content')
+    <div class="text-center my-4">
+        <p class="display-1">Evershop:</p>
+        <p class="display-1">The best place to</p>
+        <div class="display-1">
+            <a href="#">Buy</a>
+        </div>
+    </div>
+@endsection
