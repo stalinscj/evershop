@@ -17,4 +17,4 @@ use App\Http\Controllers\OrderController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::resource('orders', OrderController::class)->only(['create', 'store']);
+Route::resource('orders', OrderController::class)->only(['create', 'store', 'show']);

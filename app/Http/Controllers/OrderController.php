@@ -46,6 +46,21 @@ class OrderController extends Controller
 
         $this->paymentService->createPaymentRequest($order);
 
-        return redirect()->route('home');
+        return redirect()->route('orders.show', $order);
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Models\Order  $order
+     * @return \Illuminate\Contracts\View\View
+     */
+    public function show(Order $order)
+    {
+        if ($order->isPending()) {
+            $this->paymentService->updateOrderStatus($order);
+        }
+
+        return view('orders.show', compact('order'));
     }
 }

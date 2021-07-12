@@ -27,7 +27,7 @@ class CreateOrderTest extends TestCase
         $attributes = Order::factory()->raw();
 
         $this->post(route('orders.store'), $attributes)
-            ->assertRedirect(route('home'));
+            ->assertRedirect(route('orders.show', Order::first()));
 
         $this->assertDatabaseCount('orders', 1);
 
