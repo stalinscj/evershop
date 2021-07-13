@@ -33,7 +33,7 @@ class ShowOrderTest extends TestCase
      */
     public function an_user_can_see_the_order_detail()
     {
-        $order = Order::factory()->create();
+        $order = Order::factory()->payed()->create();
 
         $this->get(route('orders.show', $order))
             ->assertViewIs('orders.show')
@@ -49,6 +49,9 @@ class ShowOrderTest extends TestCase
      */
     public function an_user_can_see_the_button_for_pay_an_order_not_payed()
     {
+        $this->paymentService
+            ->shouldReceive('updateOrderStatus');
+            
         $order = Order::factory()->create();
 
         $this->get(route('orders.show', $order))

@@ -28,7 +28,7 @@
                     </ul>
 
                     @if (!$order->isPayed())
-                        <form action="#" method="post">
+                        <form action="{{ route('orders.payments.store', $order) }}" method="post">
                             @csrf
                             <button type="submit" class="btn btn-primary" id='btn-pay'>Proceed to Pay</button>
                         </form>
