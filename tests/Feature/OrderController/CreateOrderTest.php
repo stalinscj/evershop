@@ -13,11 +13,28 @@ class CreateOrderTest extends TestCase
     use RefreshDatabase;
 
     /**
+     * @var \Mockery\Mock|\App\Services\Contracts\PaymentService
+     */   
+    protected $paymentService;
+
+    /**
+     * Setup the test environment.
+     *
+     * @return void
+     */
+    public function setUp(): void
+    {
+        parent::setUp();
+
+        $this->paymentService = $this->mock(PaymentService::class);
+    }
+
+    /**
      * @test
      */
     public function an_user_can_create_an_order()
     {
-        $this->mock(PaymentService::class)
+        $this->paymentService
             ->shouldReceive('createPaymentRequest')
             ->once();
 

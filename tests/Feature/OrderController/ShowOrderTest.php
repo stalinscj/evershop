@@ -12,6 +12,23 @@ class ShowOrderTest extends TestCase
     use RefreshDatabase;
 
     /**
+     * @var \Mockery\Mock|\App\Services\Contracts\PaymentService
+     */   
+    protected $paymentService;
+
+    /**
+     * Setup the test environment.
+     *
+     * @return void
+     */
+    public function setUp(): void
+    {
+        parent::setUp();
+
+        $this->paymentService = $this->mock(PaymentService::class);
+    }
+
+    /**
      * @test
      */
     public function an_user_can_see_the_order_detail()
@@ -66,7 +83,7 @@ class ShowOrderTest extends TestCase
      */
     public function it_should_check_for_status_updates_when_the_order_has_the_created_status()
     {
-        $this->mock(PaymentService::class)
+        $this->paymentService
             ->shouldReceive('updateOrderStatus')
             ->once();
 
@@ -80,7 +97,7 @@ class ShowOrderTest extends TestCase
      */
     public function it_should_not_check_for_status_updates_when_the_order_does_not_has_the_created_status()
     {
-        $this->mock(PaymentService::class)
+        $this->paymentService
             ->shouldNotReceive('updateOrderStatus');
 
         $orders = Order::factory(2)
