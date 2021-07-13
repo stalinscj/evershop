@@ -1,62 +1,99 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# Evershop
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
 
-## About Laravel
+## _The best place to Buy_
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Evershop is a web app that allows you manage a very basic shop. Developed as part of "Software Engineer Admission Test".
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Features
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- Test Driven Development (TDD).
+- Web Checkout is used as Payment Gateway.
+- Generate Orders.
+- Show Order Detail.
+- Check Order Status.
+- Orders List.
 
-## Learning Laravel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Technologies
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+[Laravel 8] - Laravel is a web application framework with expressive, elegant syntax.
+[MySQL] - MySQL is the world's most popular open source database.
+[PHP] - PHP is a popular general-purpose scripting language that is especially suited to web development.
+[PHPUnit] - PHPUnit is a programmer-oriented testing framework for PHP.
 
-## Laravel Sponsors
+[Bootstrap] - The world’s most popular framework for building responsive, mobile-first sites.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
 
-### Premium Partners
+## Installation
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
+```sh
+git clone https://github.com/stalinscj/evershop.git
+```
 
-## Contributing
+```sh
+cd evershop
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```sh
+composer install
+```
 
-## Code of Conduct
+(If it was not copied automatically after installation):
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+```sh
+cp .env.example .env
+```
 
-## Security Vulnerabilities
+(If it was not generated automatically after installation):
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+```sh
+php artisan key:generate
+```
 
-## License
+From MySQL CLI:
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```sh
+CREATE DATABASE db_database;
+```
+
+In .env file set the following variables:
+
+```sh
+APP_NAME=
+APP_URL=
+
+DB_CONNECTION=
+DB_HOST=
+DB_PORT=
+DB_DATABASE=
+DB_USERNAME=
+DB_PASSWORD=
+
+WEB_CHECKOUT_LOGIN=
+WEB_CHECKOUT_TRANKEY=
+WEB_CHECKOUT_URL=
+```
+
+```sh
+php artisan migrate
+```
+
+```sh
+php artisan test
+```
+
+```sh
+php artisan serve
+```
+
+Desde un navegador ingresar a http://127.0.0.1:8000
+
+
+[//]: # (Links) 
+
+[Laravel 8]: <https://laravel.com>
+[MySQL]: <https://www.mysql.com>
+[PHP]: <https://www.php.net>
+[PHPUnit]: <https://phpunit.de>
+[Bootstrap]: <https://getbootstrap.com>
