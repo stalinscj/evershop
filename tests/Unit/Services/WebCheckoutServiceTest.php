@@ -16,7 +16,7 @@ class WebCheckoutServiceTest extends TestCase
     use RefreshDatabase;
 
     /**
-     * @var \Mockery\Mock|PlacetoPay 
+     * @var \Mockery\Mock|\Dnetix\Redirection\PlacetoPay 
      */   
     protected $placetoPay;
 
@@ -85,7 +85,7 @@ class WebCheckoutServiceTest extends TestCase
                 ],
             ],
             'expiration' => date('c', strtotime('+10 minutes')),
-            'returnUrl'  => route('home', ['order_id' => $order->id]),
+            'returnUrl'  => route('order.status', ['order_id' => $order->id]),
         ];
 
         $this->assertEquals($payloadExpected, $payload);

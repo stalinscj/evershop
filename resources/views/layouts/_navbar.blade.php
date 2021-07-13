@@ -21,6 +21,12 @@
                 </li>
 
                 <li class="nav-item">
+                    <a href="{{ route('order.status') }}"
+                        class="nav-link {{ request()->routeIs('order.status') ? 'active' : '' }}"
+                    >Check Order status</a>
+                </li>
+
+                <li class="nav-item">
                     <a href="{{ route('orders.index') }}"
                         class="nav-link {{ request()->routeIs('orders.index') ? 'active' : '' }}"
                     >Orders List</a>

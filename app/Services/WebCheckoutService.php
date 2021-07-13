@@ -98,7 +98,7 @@ class WebCheckoutService implements PaymentService
                 ],
             ],
             'expiration' => date('c', strtotime('+10 minutes')),
-            'returnUrl'  => route('home', ['order_id' => $reference]),
+            'returnUrl'  => route('order.status', ['order_id' => $reference]),
         ];
 
         return $payload;
